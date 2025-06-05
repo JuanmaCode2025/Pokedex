@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POKEDEX</title>
+    <link rel="stylesheet" href="./pokedex.css">
+    <link rel="icon" href="https://lh3.googleusercontent.com/uulpJFCV8dJuCatEaxV0T_8akdeyFylCRoffxM0XrNH3gqZp9kp1SCR9f8TIU4v-vi4pKecUA7E6pChyGfuzL5ZQ3J2fCh7mH8kE6V3A6D4p=s0" width="500px" type="image/png" >
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <img src="https://raw.githubusercontent.com/sleduardo20/pokedex/0671af442dff1d8f7141e49eb83b438885bbc9e9/public/img/logo.svg"
+                class="logo" alt="Pokédex Logo">
+
+            <p class="slogan">Informacion De Todos los Pokemones</p>
+
+            <img src="./rotomdex.png" class="rotomdex" alt="Rotom Dex">
+        </div>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" placeholder="Nombre del Pokémon..." class="search-input" id="pokemon-search">
+                <button class="search-btn" id="search-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/188/188918.png" width="20" alt="Buscar"
+                        class="btn-icon" id="Buscar_pokemon"> Buscar
+                </button>
+                <button class="random-btn" id="random-btn">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3522/3522092.png" width="20" alt="Aleatorio"
+                        class="btn-icon" id="radmon"> Aleatorio
+                </button>
+            </div>
+        </div>
+
+
+
+        <div class="pokemon-card">
+            <!-- HEADER: Solo nombre y número -->
+            <div class="card-header">
+                <div class="nombre_ball">
+                    <img src="./Poke_ball.png" width="50px" height="50px">
+                    <h2 class="pokemon-name" id="Nombre_pokemon"></h2>
+                </div>
+                
+                <span class="pokemon-id" id="ID"></span>
+            </div>
+
+            <!-- CONTENIDO PRINCIPAL Y DETALLES -->
+            <div class="card-content">
+                <!-- BODY: Imagen + Altura/Peso -->
+                <div class="card-body">
+                    <div class="card" id="">
+                        <img id="img_pokemon">
+
+                        <div class="physical-info">
+                            <div class="info-item">
+                                <span class="info-label">Altura</span>
+                                <span class="info-value" id="altura"></span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Peso</span>
+                                <span class="info-value" id="peso"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pokemon-types">
+                        <div id="tipos"></div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- INFORMACIÓN ADICIONAL -->
+                <div class="additional-details" id="additionalDetails">
+                    <!-- Estadísticas -->
+                    <div class="details-section">
+                        <h3>Estadísticas Base</h3>
+                        <div class="stats-container" id="pokemon-stats">
+
+                        </div>
+                    </div>
+
+                    <!-- Debilidades -->
+                    <div class="details-section">
+                        <h3>Debilidades</h3>
+                        <div id="weaknesses-list" >
+                            
+                        </div>
+                    </div>
+
+                    <!-- Ataques especiales -->
+                    <div class="details-section">
+                        <h3>Movimienotos</h3>
+                        <ul id="moves-list">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER: Tipos + Botón desplegable -->
+            <div class="card-footer">
+                <button class="details-toggle" onclick="Desplegar()">▼ Más información</button>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+
+<script src="./pokede.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>

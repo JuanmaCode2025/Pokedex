@@ -1,0 +1,529 @@
+* {
+    font-family: 'Pokemon Hollow', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #cc0000, #8b0000);
+    border-bottom: 4px solid #ffcc00;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Arial', sans-serif;
+}
+
+
+.logo {
+    width: 250px;
+    height: auto;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Slogan con efecto de máquina de escribir */
+.slogan {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0 20px;
+    position: relative;
+}
+
+.slogan::after {
+    content: "▾";
+    animation: blink 1s infinite;
+    position: absolute;
+    margin-left: 5px;
+}
+
+
+/* FUENTES POKÉMON */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:wght@400;700&display=swap');
+
+.search-container {
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.15);
+    border-bottom: 3px solid #ffcc00;
+}
+
+.search-box {
+    display: flex;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 50px;
+    background: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.search-input:focus {
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.7), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+    color: #888;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+}
+
+.search-btn,
+.random-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.search-btn {
+    background: linear-gradient(to bottom, #ff0000, #cc0000);
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.random-btn {
+    background: linear-gradient(to bottom, #6890f0, #386ce0);
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.search-btn:hover,
+.random-btn:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.1);
+}
+
+.search-btn:active,
+.random-btn:active {
+    transform: translateY(1px);
+}
+
+.btn-icon {
+    transition: transform 0.3s;
+}
+
+.search-btn:hover .btn-icon {
+    transform: rotate(10deg);
+}
+
+.random-btn:hover .btn-icon {
+    transform: rotate(360deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .search-box {
+        flex-wrap: wrap;
+    }
+
+    .search-input {
+        min-width: 50%;
+
+    }
+
+    .search-btn,
+    .random-btn {
+        flex: 1;
+        justify-content: center;
+        font-size: 10px;
+        padding: 10px 12px;
+    }
+}
+
+/*Card */
+
+:root {
+    --fire: #FF4422;
+    --water: #3399FF;
+    --electric: #FFCC33;
+    --flying: #8899FF;
+    --rock: #BBAA66;
+    --card-bg: #FFFFFF;
+    --header-bg: #FF4422;
+    --footer-bg: #F8F8F8;
+}
+
+.pokemon-card {
+    max-width: 900px;
+    margin: 20px auto;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+    border: 5px solid black;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: black;
+    color: white;
+}
+
+.pokemon-name {
+    margin: 0;
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+li{
+    text-transform: capitalize;
+}
+
+.pokemon-id {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card {
+    border-radius: 5%;
+    height: 300px;
+}
+
+
+#img_pokemon {
+    width: 230px;
+    /* La imagen ocupa todo el contenedor */
+
+    object-fit: contain;
+    /* Evita distorsión */
+}
+
+.physical-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.info-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card-footer {
+    padding: 16px;
+    background: var(--footer-bg);
+    border-top: 1px solid #EEE;
+}
+
+.pokemon-types {
+    padding: 20px;
+}
+
+#tipos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+}
+
+.type-badge {
+    width: 100px;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+.details-toggle {
+    width: 100%;
+    padding: 10px;
+    background: #DDD;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-bottom: 10px;
+}
+
+.details-toggle:hover {
+    background: #CCC;
+}
+
+.additional-details {
+    display: none;
+    padding: 20px;
+    padding-top: 10px;
+}
+
+.additional-details.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-name {
+    font-size: 13px;
+    color: #555;
+    min-width: 120px;
+    text-transform: capitalize;
+}
+
+.stat-value {
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: right;
+}
+
+.stat-bar {
+    width: 100%;
+    height: 8px;
+    background: #EEE;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.stat-progress {
+    height: 100%;
+    border-radius: 4px;
+    width: 0%;
+    /* Inicialmente en 0% para la animación */
+    transition: width 0.8s ease-out;
+}
+
+/* Colores para cada stat */
+.stat-hp {
+    background-color: #CD931A;
+}
+
+.stat-attack {
+    background-color: #fe0000;
+}
+
+.stat-defense {
+    background-color: #FAE078;
+}
+
+.stat-special-attack {
+    background-color: #033099;
+}
+
+.stat-special-defense {
+    background-color: #CD931A;
+}
+
+.stat-speed {
+    background-color: #00c4fa;
+}
+
+.nombre_ball{
+    display: flex;
+        flex-direction: row;
+        gap: 20px;
+}
+
+.details-section {
+    margin-bottom: 15px;
+}
+
+.details-section h3 {
+    font-size: 14px;
+    margin: 0 0 10px 0;
+    color: #444;
+}
+
+.weaknesses-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.moves-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.moves-list li {
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+/* RESPONSIVO para pantallas grandes */
+@media (min-width: 700px) {
+    .card-content {
+        flex-direction: row;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .card-body,
+    .additional-details {
+        width: 50%;
+    }
+
+    .additional-details {
+        display: block !important;
+        animation: none !important;
+    }
+
+    .details-toggle {
+        display: none;
+    }
+}
+
+
+
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Imagen de Rotom Dex con efectos */
+.rotomdex {
+    width: 150px;
+    height: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7));
+    transition: all 0.3s ease;
+}
+
+.rotomdex:hover {
+    transform: scale(1.1) rotate(10deg);
+    filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.9));
+}
+
+/* Responsive para móviles */
+@media (max-width: 700px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 10px;
+    }
+
+    .logo {
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .slogan {
+        margin: 10px 0;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .rotomdex {
+        width: 90px;
+        margin-top: 10px;
+    }
+
+    .details-section {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pokemon-card {
+        max-width: 900px;
+        margin: 20px 5px;
+        background: var(--card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', sans-serif;
+        border: 5px solid black;
+    }
+}
+
+@media (max-width: 400px){
+    .nombre_ball{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px;
+        background: black;
+        color: white;
+        flex-direction: column;
+    }
+}
